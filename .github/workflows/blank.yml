@@ -1,0 +1,28 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest  # Specify Windows runner.
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Specify the Python version you want to use.
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # If you have any dependencies.
+
+    - name: Run tests
+      run: python -m unittest test.py
