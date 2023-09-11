@@ -15,19 +15,16 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
- 
-    # - name: Install PyTest Package
-    #   uses: pip install pytest
+    
+    - name: Install PyTest Package
+      run: pip install pytest
 
-#To install dependencies.
-    # - name: Install dependencies
-    #   run: pip install -r requirements.txt  # If you have any dependencies.
+    - name: Install dependencies
+      run: pip install -r requirements.txt  # If you have any dependencies.
 
-    - name: make install
-      run: make install
-
-#    - name: Install dependencies
-#      run: pip install -r requirements.txt  # If you have any dependencies.
+    - name: build application
+      run: make build
 
     - name: Run tests
-      run: python -m unittest test_main.py
+      run: pytest test_main.py
+      
