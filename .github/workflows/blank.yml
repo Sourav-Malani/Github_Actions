@@ -15,11 +15,16 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+ 
+    # - name: Install PyTest Package
+    #   uses: pip install pytest
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # Update to Node.js version 16.
+#To install dependencies.
+    # - name: Install dependencies
+    #   run: pip install -r requirements.txt  # If you have any dependencies.
+
+    - name: make install
+      run: make install
 
 #    - name: Install dependencies
 #      run: pip install -r requirements.txt  # If you have any dependencies.

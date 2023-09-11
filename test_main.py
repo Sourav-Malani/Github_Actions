@@ -1,13 +1,13 @@
 import unittest
-from main import wallet
+from main import add
 
 w = wallet
 
 class TestWallet(unittest.TestCase):
 
-    def test_add_balance(self):  # Add `self` as the first parameter
-        result = w.addBalance(2, 3)
-        assert w.getBalance() == 3
+    def test_add(self):  # Add `self` as the first parameter
+        result = add(2, 3)
+        assert result == 3
 
 if __name__ == "__main__":
     unittest.main()
