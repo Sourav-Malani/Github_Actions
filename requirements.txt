@@ -1,5 +1,5 @@
 flask
-pylinst
+pylint  # Corrected package name
 pytest
 numpy
 pandas
