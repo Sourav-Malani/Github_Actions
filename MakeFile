@@ -3,3 +3,8 @@ install:
 
 test:
     pytest test_main.py
+
+build:
+    # Add your build commands here, such as running your application build script.
+    # For example:
+    # python build_script.py
