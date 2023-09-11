@@ -1,15 +1,16 @@
 import unittest
-from main import add
+from main import wallet
 
-class TestAddition(unittest.TestCase):
-    def test_addition(self):
-        result = add(2, 3)
-        self.assertEqual(result, 5)
+# class test_TestAddition(unittest.TestCase):
+#     def test_addition(self):
+#         result = add(2, 3)
+#         self.assertEqual(result, 5)
 
-class TestAddition2(unittest.TestCase):
-    def test_addition(self):
-        result = add(2, 4)
-        self.assertEqual(result, 6)
+#create class intsance
+w = wallet
+def test_add_balance():
+    result = wallet.addBalance(w, 3)
+    assert wallet.getBalance() == 3
 
 if __name__ == "__main__":
     unittest.main()
