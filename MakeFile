@@ -1,5 +1,5 @@
 install:
-   pip install -r requirments.txt
+    pip install -r requirements.txt
 
 test:
-   pytest test_main.py  
+    pytest test_main.py
