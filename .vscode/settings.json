@@ -9,6 +9,6 @@
         "-s",
         ".",
         "-p",
-        "main_test.py"
+        "*test_main.py"
     ]
 }
