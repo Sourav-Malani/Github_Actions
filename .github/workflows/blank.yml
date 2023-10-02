@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI with Docker
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Specify Windows runner.
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -20,8 +20,16 @@ jobs:
       run: pip install pytest
 
     - name: Install dependencies
-      run: pip install -r requirements.txt  # If you have any dependencies.
+      run: pip install -r requirements.txt
 
     - name: Run tests
       run: pytest test_main.py
-      
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build Docker Image
+      run: docker build -t UthPakhi/hello-docker:latest .
+
+    - name: Push Docker Image
+      run: docker push UthPakhi/hello-docker:latest
